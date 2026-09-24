@@ -1,5 +1,6 @@
-"""Age gate. Vend is blocked until a verifier returns pass.
-Verifier is a plug-in (ID scanner, clerk PIN). No default pass.
+"""No vender si no controle la edad.
+
+Esto es un ejercicio. No tengo lector todavia.
 """
 from dataclasses import dataclass
 
@@ -29,5 +30,5 @@ class AgeGate:
         return True, "ok"
 
     def consume(self):
-        """One check per vend."""
+        # un chequeo por compra, si no se puede repetir
         self.last = None
