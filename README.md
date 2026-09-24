@@ -1,6 +1,9 @@
 # open-vending-tobacco
 
-Age-gated tobacco vending software. No vend without a passed age check.
-Operators must follow local law. This code does not bypass ID checks.
+Estoy practicando el control de edad. En muchos lugares no se puede vender tabaco sin verificar edad.
 
-License: MIT. Public.
+El programa por ahora **no vende** si no hay un chequeo. Eso esta en `src/agegate.py`.
+
+No es un producto listo. Es un ejercicio de curso.
+
+MIT.
