@@ -1,9 +1,7 @@
 # open-vending-tobacco
 
-Estoy practicando el control de edad. En muchos lugares no se puede vender tabaco sin verificar edad.
+Control de edad. Si no hay chequeo, no vende. `src/agegate.py`.
 
-El programa por ahora **no vende** si no hay un chequeo. Eso esta en `src/agegate.py`.
-
-No es un producto listo. Es un ejercicio de curso.
-
-MIT.
+Público. MIT. Lee `LEEME_LICENCIA.md`.
+Hacé tu versión. Podés ganar dinero con lo que armes. Sin garantía.
+Cada quien cumple la ley del lugar donde lo use.
