@@ -1,4 +1,5 @@
-"""Verifier plugin. Default is deny. Wire a real ID reader later.
+"""Por ahora el verificador dice que no.
+Cuando tenga un lector lo cambio.
 """
 from abc import ABC, abstractmethod
 from .agegate import Check, AgeGate
