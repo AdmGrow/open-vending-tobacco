@@ -25,6 +25,8 @@ class AgeGate:
             return False, "no age check"
         if not self.last.passed:
             return False, "age check failed"
+        if not (self.last.method or "").strip():
+            return False, "no method"
         if self.last.min_age < self.min_age:
             return False, "min age too low"
         return True, "ok"
