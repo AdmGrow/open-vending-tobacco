@@ -23,6 +23,13 @@ def test_no_bypass():
     assert ok is False and reason == "no bypass"
 
 
+def test_atajo_con_guion():
+    g = AgeGate()
+    g.record(Check(passed=True, method="staff-key"))
+    ok, reason = g.allow_vend()
+    assert ok is False and reason == "no bypass"
+
+
 def test_deny():
     g = AgeGate()
     ok, reason = vend_if_allowed(g, DenyVerifier())
@@ -43,6 +50,7 @@ if __name__ == "__main__":
     test_sin_chequeo()
     test_sin_metodo()
     test_no_bypass()
+    test_atajo_con_guion()
     test_deny()
     test_un_chequeo_no_se_reusa()
     print("ok: bloquea sin chequeo, sin metodo, bypass y reuso")
