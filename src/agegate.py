@@ -14,6 +14,11 @@ class Check:
     method: str
     min_age: int = MIN_AGE_DEFAULT
 
+def _es_atajo(method: str) -> bool:
+    # staff-key y admin_override tampoco son un chequeo
+    partes = method.replace("-", " ").replace("_", " ").split()
+    return method in BLOCKED_METHODS or any(p in BLOCKED_METHODS for p in partes)
+
 class AgeGate:
     def __init__(self, min_age: int = MIN_AGE_DEFAULT):
         self.min_age = min_age
@@ -26,7 +31,7 @@ class AgeGate:
         if self.last is None:
             return False, "no age check"
         method = (self.last.method or "").strip().lower()
-        if method in BLOCKED_METHODS:
+        if _es_atajo(method):
             return False, "no bypass"
         if not self.last.passed:
             return False, "age check failed"
