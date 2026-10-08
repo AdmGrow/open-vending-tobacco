@@ -1,4 +1,4 @@
-"""Test corto. Sin chequeo, sin metodo, o reusando el chequeo = no vende."""
+"""Test corto. Sin chequeo, sin metodo, bypass o reuso = no vende."""
 from src.agegate import AgeGate, Check
 from src.verifier import DenyVerifier, vend_if_allowed
 
@@ -14,6 +14,13 @@ def test_sin_metodo():
     g.record(Check(passed=True, method="  "))
     ok, reason = g.allow_vend()
     assert ok is False and reason == "no method"
+
+
+def test_no_bypass():
+    g = AgeGate()
+    g.record(Check(passed=True, method="staff"))
+    ok, reason = g.allow_vend()
+    assert ok is False and reason == "no bypass"
 
 
 def test_deny():
@@ -35,6 +42,7 @@ def test_un_chequeo_no_se_reusa():
 if __name__ == "__main__":
     test_sin_chequeo()
     test_sin_metodo()
+    test_no_bypass()
     test_deny()
     test_un_chequeo_no_se_reusa()
-    print("ok: bloquea sin chequeo, sin metodo y si se reusa el chequeo")
+    print("ok: bloquea sin chequeo, sin metodo, bypass y reuso")
