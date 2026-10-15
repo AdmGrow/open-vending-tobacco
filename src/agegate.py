@@ -2,6 +2,7 @@
 
 Esto es un ejercicio. No tengo lector todavia.
 Un atajo de staff o admin no cuenta como chequeo.
+Un chequeo sirve para una sola compra.
 """
 from dataclasses import dataclass
 
