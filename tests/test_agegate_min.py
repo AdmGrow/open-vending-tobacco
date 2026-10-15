@@ -46,6 +46,13 @@ def test_un_chequeo_no_se_reusa():
     assert ok2 is False and reason2 == "no age check"
 
 
+def test_edad_minima_baja():
+    g = AgeGate(min_age=18)
+    g.record(Check(passed=True, method="documento", min_age=16))
+    ok, reason = g.allow_vend()
+    assert ok is False and reason == "min age too low"
+
+
 if __name__ == "__main__":
     test_sin_chequeo()
     test_sin_metodo()
@@ -53,4 +60,5 @@ if __name__ == "__main__":
     test_atajo_con_guion()
     test_deny()
     test_un_chequeo_no_se_reusa()
-    print("ok: bloquea sin chequeo, sin metodo, bypass y reuso")
+    test_edad_minima_baja()
+    print("ok: bloquea sin chequeo, sin metodo, bypass, reuso y edad baja")
