@@ -1,5 +1,5 @@
 """Test corto. Sin chequeo, sin metodo, bypass o reuso = no vende.
-Hoy practique otra vez el deny: sin lector real no vende."""
+Hoy tarde volvi a probar el deny: sin lector real no vende."""
 from src.agegate import AgeGate, Check
 from src.verifier import DenyVerifier, vend_if_allowed
 
